@@ -24,6 +24,7 @@ layout splash_screen
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
+style AppTheme.Splash
 style Theme.PremierLeague
 xml backup_rules
 xml data_extraction_rules

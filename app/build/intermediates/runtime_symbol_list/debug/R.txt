@@ -3888,6 +3888,7 @@ int style Animation_Design_BottomSheetDialog 0x7f100005
 int style Animation_Material3_BottomSheetDialog 0x7f100006
 int style Animation_Material3_SideSheetDialog 0x7f100007
 int style Animation_MaterialComponents_BottomSheetDialog 0x7f100008
+int style AppTheme_Splash 0x7f10044e
 int style Base_AlertDialog_AppCompat 0x7f100009
 int style Base_AlertDialog_AppCompat_Light 0x7f10000a
 int style Base_Animation_AppCompat_Dialog 0x7f10000b

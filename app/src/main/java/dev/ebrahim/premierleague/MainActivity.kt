@@ -12,11 +12,10 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
-    var adapter: TeamsAdapter? = null
+    private val adapter: TeamsAdapter by lazy { TeamsAdapter(emptyList()) }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        adapter = TeamsAdapter(emptyList())
         val layoutManager=LinearLayoutManager(this)
         val rv : RecyclerView = findViewById(R.id.rv_teams)
         rv.layoutManager=layoutManager
@@ -28,20 +27,13 @@ class MainActivity : AppCompatActivity() {
     fun requestTeams() {
         retrofit.getAllTeamsInEnglishPremierLeague().enqueue(object : Callback<TeamList> {
             override fun onResponse(call: Call<TeamList>, response: Response<TeamList>) {
-                if (response.isSuccessful) {
-                    val teamResponse = response.body()
-                    if (teamResponse != null) {
-                        Log.d("+++", teamResponse.teams.toString())
-                        adapter?.teams = teamResponse.teams
-                        adapter?.notifyDataSetChanged()
-                    } else {
-                        print("Response body is null")
-                    }
-                } else {
-                    print("faillll")
+                if (!response.isSuccessful) return
+                val teamResponse = response.body()
+                teamResponse?.let {
+                    adapter.teams = teamResponse.teams
+                    adapter.notifyDataSetChanged()
                 }
-            }
-
+    }
             override fun onFailure(call: Call<TeamList>, t: Throwable) {
                 Log.d("***", " onFail ${t.localizedMessage}")
             }

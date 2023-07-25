@@ -118,7 +118,9 @@ ADDED from D:\lectures\Plugin talents\premierleague\app\src\main\AndroidManifest
 activity#dev.ebrahim.premierleague.SplashActivity
 ADDED from D:\lectures\Plugin talents\premierleague\app\src\main\AndroidManifest.xml:20:9-28:20
 	android:exported
-		ADDED from D:\lectures\Plugin talents\premierleague\app\src\main\AndroidManifest.xml:22:13-36
+		ADDED from D:\lectures\Plugin talents\premierleague\app\src\main\AndroidManifest.xml:23:13-36
+	android:theme
+		ADDED from D:\lectures\Plugin talents\premierleague\app\src\main\AndroidManifest.xml:22:13-51
 	android:name
 		ADDED from D:\lectures\Plugin talents\premierleague\app\src\main\AndroidManifest.xml:21:13-43
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
